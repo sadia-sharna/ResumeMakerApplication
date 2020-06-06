@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="script/angular/angular.js"></script>
+    <script src="script/angular/Script.js"></script>
+    <link href="Style.css" rel="stylesheet" />
+    <title>ResumeUI</title>
+</head>
+
+
+<body ng-app="ResumeUI">
+    <h2 style="text-align:center">Your Resume</h2>
+
+    <div class="container" ng-controller="ResumeViewController">
+        <div class="row-heading" style=" text-align:center">
+            <b>
+                <p>{{ViewResume.name}}</p>
+                <p> {{ViewResume.phone}}</p>
+                <p> {{ViewResume.email}}</p>
+                <p> {{ViewResume.linkedin}}</p>
+                <p> {{ViewResume.github}}</p>
+            </b>
+        </div>
+       
+
+        <div class="view-heading" style="height:30px; ">
+            Profile Summary
+        </div>
+        <div class="view-para">
+            {{ViewResume.profile_descr}}
+        </div>
+        <!--<ul>
+
+        <ui ng-repeat="x in ViewResume.skills">
+            <li>{{x.toolname}}</li>
+            <li>{{x.expertise}}</li>
+        </ui>
+        {{ViewResume.skills}}
+    </ul>-->
+        <div class="view-heading" style="height:30px; ">
+            Education
+        </div>
+        <table>
+            <tr>
+                <th>Exam Name</th>
+                <th>Institute Name</th>
+                <th>Result</th>
+                <th>Graduation Year</th>
+            </tr>
+            <tr ng-repeat="x in ViewResume.education">
+                <td>{{x.exam_name}}</td>
+                <td>{{x.institute_name}}</td>
+                <td>{{x.result}}</td>
+                <td>{{x.graduation_year}}</td>
+            </tr>
+        </table>
+        <div class="view-heading" style="height:30px; ">
+            Skills
+        </div>
+        <table>
+            <tr>
+                <th>Tools</th>
+                <th>Expertise</th>
+
+            </tr>
+            <tr ng-repeat="x in ViewResume.skills">
+                <td>{{x.toolname}}</td>
+                <td>{{x.expertise}}</td>
+
+            </tr>
+        </table>
+
+        <div class="view-heading" style="height:30px; ">
+            ExtraCurricular Activities
+        </div>
+
+        <ui ng-repeat="x in ViewResume.extraCurricular">
+            <li>{{x.activity}}</li>
+        </ui>
+
+        <div class="view-heading" style="height:30px; ">
+            References
+        </div>
+        <ui ng-repeat="x in ViewResume.reference">
+            <li>{{x.teacher_name}}</li>
+            <li>{{x.teacher_email}}</li>
+            <li>{{x.teacher_phone}}</li>
+
+
+        </ui>
+    </div>
+
+</body>
+</html>
+
+
+
+

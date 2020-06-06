@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="script/angular/angular.js"></script>
+    <script src="script/angular/Script.js"></script>
+    <link href="Style.css" rel="stylesheet" />
+    <title>ResumeUI</title>
+</head>
+
+<body ng-app="ResumeUI">
+    <h2 style="text-align:center">Make Resume</h2>
+
+    <div class="container" ng-controller="ResumeController">
+        <form ng-submit="addEducationInfo()">
+            <div class="row-heading" style="height:80px; text-align:center">
+                Education
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-25">
+                    <label for="select_exam">Select Exam</label>
+
+                </div>
+                <div class="col-25">
+                    <select ng-model="selectedExam" ng-options="x.exam_name for x in education.exam" id="select_exam" required></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="institute_name">Institute name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="institute_name" name="institute_name" placeholder="Your institue name.." ng-model="education.institute_name" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="result">Result</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="result" name="result" placeholder="Your result.." ng-model="education.result" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="graduation_year">Graduation Year</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="graduation_year" name="graduation_year" placeholder="Year" ng-model="education.graduation_year" required>
+                </div>
+            </div>
+
+           
+            <div class="row">
+
+                <button value="Next" class="nextPage" ng-click="redirctToExtraCur()" style="height:40px; width:60px;">Next</button>
+                <input type="submit" value="Add">
+            </div>
+            <br /><br />
+
+
+        </form>
+      
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+<!--
+$scope.BillingHead.MakeBy = $localStorage.userInfo.Name;
+                $scope.ResponseModel.Message = "Create";
+                $scope.ResponseModel.Status = 1;
+                $scope.ResponseModel.Data = $scope.BillingHead;
+                var data = $scope.ResponseModel;
+
+                var Uri = NiramoyApi.ApiUrl() + BillingHead + "/" + CreateBillingHead;
+                $http.post(Uri, JSON.stringify(data),
+                    {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }
+                ).success(function (data) {
+                    if (data.Status == 1) {
+                        $scope.Clear();
+                        $scope.loadData();
+                        $scope.showSuccessMsg(data.Message);
+                    }
+                    else
+                        $scope.showErrorMsg(data.Message);
+
+                });
+    -->

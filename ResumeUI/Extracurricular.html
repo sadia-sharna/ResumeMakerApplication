@@ -1,0 +1,45 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="script/angular/angular.js"></script>
+    <script src="script/angular/Script.js"></script>
+    <link href="Style.css" rel="stylesheet" />
+    <title>ResumeUI</title>
+</head>
+
+
+<body ng-app="ResumeUI">
+    <h2 style="text-align:center">Make Resume</h2>
+
+    <div class="container" ng-controller="ResumeController">
+        <form ng-submit="addExtraCurricular()">
+            <div class="row-heading" style="height:80px; text-align:center">
+                ExtraCurricular Activity
+            </div>
+            <hr />
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="activity">Activity</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="activity" name="activity" placeholder="Your activity.." ng-model="extraCur.activity" required>
+                </div>
+            </div>
+
+        
+
+            <div class="row">
+                <button value="Next" class="nextPage" ng-click="redirctToSkills()" style="height:40px; width:60px;">Next</button>
+                <input type="submit" value="Add">
+
+            </div>
+            <br /><br />
+        </form>
+        
+
+    </div>
+</body>
+</html>

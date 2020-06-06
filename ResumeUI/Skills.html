@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="script/angular/angular.js"></script>
+    <script src="script/angular/Script.js"></script>
+    <link href="Style.css" rel="stylesheet" />
+    <title>ResumeUI</title>
+</head>
+
+<body ng-app="ResumeUI">
+    <h2 style="text-align:center">Make Resume</h2>
+
+    <div class="container" ng-controller="ResumeController">
+        <form ng-submit="addSkillsinfo()">
+            
+            <div class="row-heading" style="height:80px; text-align:center">
+                
+                Skills
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-25">
+                    <label for="select_tool">Select Langugae</label>
+
+                </div>
+                <div class="col-25">
+                    <select ng-model="selectedTool" ng-options="x.tools for x in skills.toolsTab" id="select_tool" required></select>
+                </div>
+            </div>
+            <br /><br /><br />
+            
+            <div class="row">
+                
+                <div class="col-25">
+                    <label for="select_expertise">Select Expertise Level</label>
+
+                </div>
+                <div class="col-25">
+                    <select ng-model="selectedExpertise" ng-options="x.expertise for x in skills.expertiseTab" id="select_expertise" required></select>
+                </div>
+            </div>
+
+            <br /><br /><br />
+            <div class="row">
+
+                <button value="Next" class="nextPage" ng-click="redirctToReference()" style="height:40px; width:60px;">Next</button>
+                <input type="submit" value="Add">
+            </div>
+            <br /><br />
+
+
+        </form>
+       
+    </div>
+</body>
+
+</html>
+
+
